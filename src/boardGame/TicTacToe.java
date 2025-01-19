@@ -78,10 +78,6 @@ public class TicTacToe {
 		if (!isBoardValid) {
 			return "Invalid game board";
 		}
-		// Check if game is over before before checking for a winner
-		if (!isGameOver()) {
-			return "Game is OnGoing";
-		} 
 		
 		Set<String> xWins = new HashSet<>();
 		Set<String> oWins = new HashSet<>();
@@ -104,7 +100,7 @@ public class TicTacToe {
 			return "O Wins";
 		}
 	
-		return "No Winner";
+		return "Game is OnGoing";
 	}
 	
 	/*
@@ -259,7 +255,7 @@ public class TicTacToe {
 	 * @return true if the game is over, false otherwise.
 	 */
 	public boolean isGameOver() {
-		return !anyMovesLeft();
+		return !anyMovesLeft() || checkWinner() != "Game is OnGoing";
 	}
 	
 	/**
