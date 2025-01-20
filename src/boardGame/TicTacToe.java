@@ -100,7 +100,7 @@ public class TicTacToe {
 			return "O Wins";
 		}
 	
-		return "Game is OnGoing";
+		return anyMovesLeft() ? "Game is onGoing" : "No Winner";
 	}
 	
 	/*
