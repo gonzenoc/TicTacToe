@@ -255,8 +255,7 @@ public class TicTacToe {
 	 * @return true if the game is over, false otherwise.
 	 */
 	public boolean isGameOver() {
-		String status = checkWinner();
-		return status.equals("X Wins") || status.equals("O Wins") || !anyMovesLeft() || status.equals("No Winner");
+		return !checkWinner().equals("Game is onGoing");
 	}
 	
 	/**
